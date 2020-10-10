@@ -5,6 +5,7 @@
 #include <point.h>
 #include <rectangle.h>
 #include <triangle.h>
+#include <cercle.h>
 
 using namespace std;
 
@@ -35,6 +36,21 @@ int main()
 
     Triangle triangleTest(pointTriangle1,pointTriangle2,pointTriangle3);
     triangleTest.Afficher();
+
+
+    Point centreCercle(0,0);
+    Point dansLeCercle(0,3);
+    Point surLeCercle(0,5);
+    Point aCoteDuCercle(10,10);
+    Cercle cercleTest(centreCercle,10);
+    string estDansLeCercle = (cercleTest.PointParametreSurLeCercle(surLeCercle))?"Oui, il est sur le cercle":"Non il n'est pas sur le cercle";
+    std::cout<<"Le point surLeCercle est comme son nom l'indique ? "<<estDansLeCercle<<endl;
+    estDansLeCercle = (cercleTest.PointParametreSurLeCercle(aCoteDuCercle))?"Oui, il est sur le cercle":"Non il n'est pas sur le cercle";
+    std::cout<<"Le point aCoteDuCercle est comme son nom l'indique ? "<<estDansLeCercle<<endl;
+    estDansLeCercle = (cercleTest.PointParametreDansLeCercle(dansLeCercle))?"Oui, il est dans le cercle":"Non il n'est pas dans le cercle";
+    std::cout<<"Le point dansLeCercle est comme son nom l'indique ? "<<estDansLeCercle<<endl;
+    estDansLeCercle = (cercleTest.PointParametreDansLeCercle(surLeCercle))?"Oui, il est dans le cercle":"Non il n'est pas dans le cercle";
+    std::cout<<"Le point surLeCercle est comme son nom l'indique ? "<<estDansLeCercle<<endl;
 
     return 0;
 }

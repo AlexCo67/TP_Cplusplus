@@ -25,6 +25,8 @@ public:
     bool TriangleEstIsocele();
     bool TriangleEstRectangle();
 
+    bool DoubleEquals(double a, double b, double epsilon);
+
     double LongueurCoteTriangle(Point sommet1, Point sommet2);
 
     void Afficher();

@@ -7,7 +7,7 @@
 
 using namespace std;
 
-bool DoubleEquals(double a, double b, double epsilon = 0.001)
+bool Triangle::DoubleEquals(double a, double b, double epsilon = 0.001)
 {
     return std::abs(a - b) < epsilon;
 }
@@ -35,6 +35,10 @@ void Triangle::SetSommet2(Point sommet2){
 }
 void Triangle::SetSommet3(Point sommet3){
     this->sommet3=sommet3;
+}
+
+double Triangle::LongueurCoteTriangle(Point sommet1, Point sommet2){
+    return sqrt(pow(sommet1.coordoneeX-sommet2.coordoneeX,2)+pow(sommet1.coordoneeY-sommet2.coordoneeY,2));
 }
 
 int Triangle::BaseTriangle(){
@@ -94,9 +98,6 @@ bool Triangle::TriangleEstRectangle(){
     return(DoubleEquals(cote1AuCarre,cote2AuCarre)||DoubleEquals(cote1AuCarre,cote3AuCarre)||DoubleEquals(cote2AuCarre,cote3AuCarre));
 }
 
-double Triangle::LongueurCoteTriangle(Point sommet1, Point sommet2){
-    return sqrt(pow(sommet1.coordoneeX-sommet2.coordoneeX,2)+pow(sommet1.coordoneeY-sommet2.coordoneeY,2));
-}
 
 void Triangle::Afficher(){
     std::cout<<"Les trois points du triangle sont :"<<endl;
