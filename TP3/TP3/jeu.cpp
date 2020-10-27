@@ -98,7 +98,6 @@ int Jeu::SelectionColonne(GrilleMorpion& grilleDeMorpion){
     return numeroColonne;
 }
 
-
 bool Jeu::TourJoueurMorpion(Joueur& joueur, GrilleMorpion& grilleDeMorpion){
     grilleDeMorpion.AffichageGrille();
     std::cout<<"Joueur "<<joueur.GetIdentifiant()<<" à vous de jouer"<<std::endl;
@@ -114,6 +113,9 @@ bool Jeu::TourJoueurMorpion(Joueur& joueur, GrilleMorpion& grilleDeMorpion){
     grilleDeMorpion.DeposerJeton(joueur, grilleDeMorpion.RetournerCase(numeroLigne-1, numeroColonne-1));
     return grilleDeMorpion.VictoireJoueur(joueur);
 }
+
+
+
 
 bool Jeu::DeroullementPuisance4(){
     GrillePuissance4 grilleDePuissance4= GrillePuissance4();
